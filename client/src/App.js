@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import axios from 'axios';
+import PlayerCard from './components/PlayerCard'
 
 import './App.css';
 
@@ -27,8 +28,20 @@ axios
 }
   render(){
     return (
-    <div className="App">
-      <h1>Happy building <span role="img" aria-label="Smiling emoji">😃</span></h1>
+    <div className="container">
+      {this.state.players.map(player => (
+     <PlayerCard 
+     key={player.id} 
+    //  player={player}
+     name={player.name} 
+     rank={player.rank} 
+     team={player.team}
+    />
+      ))
+
+      };
+    
+      
     </div>
   );
 }
