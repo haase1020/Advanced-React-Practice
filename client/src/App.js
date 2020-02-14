@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import axios from 'axios';
 import PlayerCard from './components/PlayerCard'
+import Nav from './components/Nav';
 
 import './App.css';
 
@@ -29,6 +30,7 @@ axios
   render(){
     return (
     <div className="container">
+      <Nav />
       {this.state.players.map(player => (
      <PlayerCard 
      key={player.id} 
