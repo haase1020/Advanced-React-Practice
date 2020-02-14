@@ -13,6 +13,18 @@ class App extends Component {
     };
   }
 
+componentDidMount(){
+axios
+.get('http://localhost:5000/api/footballers')
+.then(res=> {
+  console.log('footballers', res.data);
+  this.setState({players: res.data})
+})
+.catch(err => {
+  console.log("Error", err)
+})
+
+}
   render(){
     return (
     <div className="App">
